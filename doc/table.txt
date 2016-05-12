@@ -1,0 +1,4 @@
+Dataset		Graph0		Graph1		Graph2		Graph3
+Serial		5,999		23,671		7,811,117	6,985,553
+Parallel	15,000		19,620		1,979,855	1,254,846
+Speedup	 	0.39		1.20		3.94		5.5

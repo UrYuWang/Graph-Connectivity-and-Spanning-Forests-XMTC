@@ -1,0 +1,202 @@
+make[1]: Entering directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.s.c DATA=graph0 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/*.h /opt/xmt/class/xmtdata/connectivity/graph0/*.xbo connectivity.s.c -o connectivity.s
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.s.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 38075 cycles. Standard output: output-20160430-170237-426.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph0/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph0/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.s.c DATA=graph1 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph1/*.h /opt/xmt/class/xmtdata/connectivity/graph1/*.xbo connectivity.s.c -o connectivity.s
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.s.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 63076 cycles. Standard output: output-20160430-170251-476.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph1/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph1/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.s.c DATA=graph2 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph2/*.h /opt/xmt/class/xmtdata/connectivity/graph2/*.xbo connectivity.s.c -o connectivity.s
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.s.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute.....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 36287977 cycles. Standard output: output-20160430-170305-941.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph2/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph2/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.s.c DATA=graph3 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph3/*.h /opt/xmt/class/xmtdata/connectivity/graph3/*.xbo connectivity.s.c -o connectivity.s
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.s.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute.....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 11248722 cycles. Standard output: output-20160430-170329-069.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph3/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph3/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.p.c DATA=graph0 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/*.h /opt/xmt/class/xmtdata/connectivity/graph0/*.xbo connectivity.p.c -o connectivity.p
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.p.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute.....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 47715 cycles. Standard output: output-20160430-170354-128.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph0/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph0/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.p.c DATA=graph1 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph1/*.h /opt/xmt/class/xmtdata/connectivity/graph1/*.xbo connectivity.p.c -o connectivity.p
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.p.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 58803 cycles. Standard output: output-20160430-170413-925.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph1/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph1/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.p.c DATA=graph2 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph2/*.h /opt/xmt/class/xmtdata/connectivity/graph2/*.xbo connectivity.p.c -o connectivity.p
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.p.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 5101697 cycles. Standard output: output-20160430-170427-342.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph2/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph2/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make check PROGRAM=connectivity.p.c DATA=graph3 
+make[2]: Entering directory `/home/s16en/s16en99/connectivity'
+rm -rf *.b *.sim dump.D D.txt *~ *.log output*.txt
+xmtcc -quiet -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph3/*.h /opt/xmt/class/xmtdata/connectivity/graph3/*.xbo connectivity.p.c -o connectivity.p
+
+          ############################################
+          #  THE COMPILATION PROCESS WAS SUCCESSFUL  #
+          ############################################
+xmtfpga connectivity.p.b --memdump D.txt --dumpvar D
+Submitting job to XMT FPGA board...success!
+Waiting for job to execute....done!
+Done with Check 1
+Done with Check 2
+Done with Check 3
+Done with Check 4
+Done with Check 5
+PASS: Your program passed the 1st correctness test!
+NOTE: This doesn't mean your code is correct, you also need to dump
+       the D array and 'diff' it with the valid result in the corresponding
+       data/graphX directory
+Execution time: 4831081 cycles. Standard output: output-20160430-170441-053.txt. Memory dump: D.txt.
+Next we will compare the D array with /opt/xmt/class/xmtdata/connectivity/graph3/validgraph.txt
+diff D.txt /opt/xmt/class/xmtdata/connectivity/graph3/validgraph.txt >/dev/null
+PASS: Your program passed the 2nd correctness test!
+make[2]: Leaving directory `/home/s16en/s16en99/connectivity'
+make[1]: Leaving directory `/home/s16en/s16en99/connectivity'

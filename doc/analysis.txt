@@ -1,0 +1,43 @@
+Serial: 
+
+(I both did BFS and DFS, BFS was not implemented in the fasted way possible so I just checked DFS performance.)
+
+When we see the first white node (not visited before) we mark it to be it’s own parent and then we iterate over all it’s adjacent nodes and recursively call the DFS and those nodes.  The algorithm is going to be DFS for each node plus the outer loop for iterating over the nodes to check if they are black/white (visited/not visited) so the total time is going to be O(2n+m) = O(n+m)
+
+Parallel: 
+
+We are using the second connectivity algorithm which ideally runs in O(logn) time and O((n+m)logn) work. In our program we look at each step individually:
+
+Step1:
+In this step we set each node to be rooted star and check if that assignment was wrong. Then we set each node to quit unless that node is the root of the tree or root of a star with and edge which goes to different connected component. We also initialize the array for our prefix sum command. Also if nothing is marked to stay at this round we simply terminate the algorithm  after this step.
+
+So it will take O(1) time and with work complexity of O(m+n).
+
+Step2:
+In this step for each rooted star/root of tree if it’s not marked to quit, we connect it to a parent of a node (where there is an edge between them) with smaller ID. So at this step both rooted star and root of tree will participate because of the exercise 42 of the class node. Also in order to resolve concurrent write to a same location we have atomic prefix sum which lets the first thread who reaches the write command to actually write and the other threads will not try to write after that. Any root which got hooked or hooked upon at this stage will marked at not being root of star any more to prevent another hooking in step 3.
+
+Again this will be done in O(1) time with work complexity of O(n+m).
+
+Step3:
+This is exactly same as step 2, but with a difference that only rooted star will participate in this round and they can actually hook to a node with bigger ID than themselves. 
+
+This will be done using M processor in O(1) time with work complexity of O(n+m).
+
+Step4: 
+At this step we just do parallel pointer jumping. But at this step and every place where we tried to copy from D_write to D we did one step pointer jumping to make our algorithm converge faster. 
+
+This step will be done in O(1) time and O(n) work.
+
+This algorithm will run in logn steps (actually in actual implementation it converge much sooner than logn steps). So the time complexity is logn steps each taking O(1) time and O(n+m) work so it’s going to be O(logn) time and O((n+m)logn) work in total which is similar to theoretical bounds.
+
+The speedup we got from the theoretical analysis is not exactly as it was expected. Simply because we are not taking the constants into account in the aysmptotic analysis. The shape of the graph has a huge impact on the constant factors especially because it will affect the number of iteration that the algorithm is running and at the end affect the run time.
+
+
+The final speed up and cycle count is as follows.
+
+Dataset		Graph0		Graph1		Graph2		Graph3
+Serial		5,999		23,671		7,811,117	6,985,553
+Parallel	15,000		19,620		1,979,855	1,254,846
+Speedup	 	0.39		1.20		3.94		5.5
+
+ 

@@ -1,0 +1,94 @@
+pre-Check
+post-Check
+################################################################################
+#  STAGE 0 : Checking for errors. If this check passes you should not encounter
+#            other compilation errors before the post processing and linking
+#  /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c 
+################################################################################
+/opt/xmt/xmtcc/xmtcc-core32 -S -include xmtio.h -D _XMT_NTCUS=64  -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD -O1 -std=gnu99  -fxmt-nTCUs=64 -fxmt-stack-perTCU /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c -o checktmp.SjPUf0
+/opt/xmt/xmtcc/gcc-xmt32/bin/xmt32-xmt32-elf-gcc -fno-delayed-branch -mno-check-zero-division  -mno-explicit-relocs  -S -include xmtio.h -D _XMT_NTCUS=64 -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD -O1 -std=gnu99 -fxmt-nTCUs=64 -fxmt-stack-perTCU /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c -o checktmp.SjPUf0
+Checking (/opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c) was successful
+################################################################################
+#  STAGE 0 : Checking for errors. If this check passes you should not encounter
+#            other compilation errors before the post processing and linking
+#  connectivity.p.c 
+################################################################################
+/opt/xmt/xmtcc/xmtcc-core32 -S -include xmtio.h -D _XMT_NTCUS=64  -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD -O1 -std=gnu99  -fxmt-nTCUs=64 -fxmt-stack-perTCU connectivity.p.c -o checktmp.Vp8bZU
+/opt/xmt/xmtcc/gcc-xmt32/bin/xmt32-xmt32-elf-gcc -fno-delayed-branch -mno-check-zero-division  -mno-explicit-relocs  -S -include xmtio.h -D _XMT_NTCUS=64 -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD -O1 -std=gnu99 -fxmt-nTCUs=64 -fxmt-stack-perTCU connectivity.p.c -o checktmp.Vp8bZU
+connectivity.p.c: In function ‘main’:
+(insn 576 575 135 2 (set (reg/v:SI 177 $g1 [ psb1 ])
+        (reg:SI 178 $g2 [276])) 202 {*xmt_mvtg} (nil)
+    (nil))
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <URL:http://gcc.gnu.org/bugs.html> for instructions.
+Declaring global register $g0
+Declaring global register $g1
+Checking (connectivity.p.c) was successful
+################################################################################
+#  STAGE 1 : Pre-Processing
+#  /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c -> xmtc.i
+################################################################################
+/opt/xmt/xmtcc/xmtcc-core32 -E -include xmtio.h -D _XMT_NTCUS=64  -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c -o /tmp/xmtcc.PTWkUd9SRr/xmtc.i
+/opt/xmt/xmtcc/gcc-xmt32/bin/xmt32-xmt32-elf-gcc -fno-delayed-branch -mno-check-zero-division  -mno-explicit-relocs  -E -include xmtio.h -D _XMT_NTCUS=64 -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c -o /tmp/xmtcc.PTWkUd9SRr/xmtc.i
+Pre-Processing (/opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtc.c) was successful
+################################################################################
+#  STAGE 1 : Pre-Processing
+#  connectivity.p.c -> connectivity.p.i
+################################################################################
+/opt/xmt/xmtcc/xmtcc-core32 -E -include xmtio.h -D _XMT_NTCUS=64  -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD connectivity.p.c -o /tmp/xmtcc.PTWkUd9SRr/connectivity.p.i
+/opt/xmt/xmtcc/gcc-xmt32/bin/xmt32-xmt32-elf-gcc -fno-delayed-branch -mno-check-zero-division  -mno-explicit-relocs  -E -include xmtio.h -D _XMT_NTCUS=64 -D CHECK_CORRECTNESS -include /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.h -D _XMT_GRAIN_PER_TD connectivity.p.c -o /tmp/xmtcc.PTWkUd9SRr/connectivity.p.i
+Pre-Processing (connectivity.p.c) was successful
+################################################################################
+#  STAGE 2 : CIL : Source to source transformations (outlining, clustering, ...)
+#  ATTENTION: An error like 'xmtc.i:12 ...' means there is something wrong  
+#             on line 12. And please forgive CIL's cryptic error messages ! :)  
+#  xmtc.i -> xmtc.cil.c
+################################################################################
+/opt/xmt/xmtcc/xmtcilly.asm.exe   --grainPerTD --doXMTNSpSerializer --dontXMTCoutliningInner --dontXMTCouterSpawnConversion --dontXMTCdynamicSerializer --disallowDuplication /tmp/xmtcc.PTWkUd9SRr/xmtc.i --out /tmp/xmtcc.PTWkUd9SRr/xmtc.cil.c
+CIL (xmtc.i) was successful
+################################################################################
+#  STAGE 2 : CIL : Source to source transformations (outlining, clustering, ...)
+#  ATTENTION: An error like 'connectivity.p.i:12 ...' means there is something wrong  
+#             on line 12. And please forgive CIL's cryptic error messages ! :)  
+#  connectivity.p.i -> connectivity.p.cil.c
+################################################################################
+/opt/xmt/xmtcc/xmtcilly.asm.exe   --grainPerTD --doXMTNSpSerializer --dontXMTCoutliningInner --dontXMTCouterSpawnConversion --dontXMTCdynamicSerializer --disallowDuplication /tmp/xmtcc.PTWkUd9SRr/connectivity.p.i --out /tmp/xmtcc.PTWkUd9SRr/connectivity.p.cil.c
+CIL (connectivity.p.i) was successful
+################################################################################
+#  STAGE 3 : Compiling CIL output File.
+#  xmtc.cil.c -> xmtc.s
+################################################################################
+/opt/xmt/xmtcc/xmtcc-core32 -S -O1 -std=gnu99 -fxmt-nTCUs=64 -fxmt-stack-perTCU /tmp/xmtcc.PTWkUd9SRr/xmtc.cil.c -o /tmp/xmtcc.PTWkUd9SRr/xmtc.s
+/opt/xmt/xmtcc/gcc-xmt32/bin/xmt32-xmt32-elf-gcc -fno-delayed-branch -mno-check-zero-division  -mno-explicit-relocs  -S -O1 -std=gnu99 -fxmt-nTCUs=64 -fxmt-stack-perTCU /tmp/xmtcc.PTWkUd9SRr/xmtc.cil.c -o /tmp/xmtcc.PTWkUd9SRr/xmtc.s
+/opt/xmt/xmtcc.master/gcc-xmt32/bin/../lib/gcc/xmt32-xmt32-elf/4.0.2/../../../../xmt32-xmt32-elf/include/xmtio.h:32: warning: conflicting types for built-in function ‘printf’
+Compiling File (xmtc.cil.c) was successful
+################################################################################
+#  STAGE 3 : Compiling CIL output File.
+#  connectivity.p.cil.c -> connectivity.p.s
+################################################################################
+/opt/xmt/xmtcc/xmtcc-core32 -S -O1 -std=gnu99 -fxmt-nTCUs=64 -fxmt-stack-perTCU /tmp/xmtcc.PTWkUd9SRr/connectivity.p.cil.c -o /tmp/xmtcc.PTWkUd9SRr/connectivity.p.s
+/opt/xmt/xmtcc/gcc-xmt32/bin/xmt32-xmt32-elf-gcc -fno-delayed-branch -mno-check-zero-division  -mno-explicit-relocs  -S -O1 -std=gnu99 -fxmt-nTCUs=64 -fxmt-stack-perTCU /tmp/xmtcc.PTWkUd9SRr/connectivity.p.cil.c -o /tmp/xmtcc.PTWkUd9SRr/connectivity.p.s
+/opt/xmt/xmtcc.master/gcc-xmt32/bin/../lib/gcc/xmt32-xmt32-elf/4.0.2/../../../../xmt32-xmt32-elf/include/xmtio.h:32: warning: conflicting types for built-in function ‘printf’
+Declaring global register $g0
+Declaring global register $g1
+Compiling File (connectivity.p.cil.c) was successful
+################################################################################
+#  STAGE 4 : Post Processing
+#  xmtc.s -> xmtc.p
+################################################################################
+/opt/xmt/xmtcc/xmt-post -xmt32 -fpga -npSer /tmp/xmtcc.PTWkUd9SRr/xmtc.s /tmp/xmtcc.PTWkUd9SRr/xmtc.p
+Post-Processing File (xmtc.s) was successful
+################################################################################
+#  STAGE 4 : Post Processing
+#  connectivity.p.s -> connectivity.p.p
+################################################################################
+/opt/xmt/xmtcc/xmt-post -xmt32 -fpga -npSer /tmp/xmtcc.PTWkUd9SRr/connectivity.p.s /tmp/xmtcc.PTWkUd9SRr/connectivity.p.p
+Post-Processing File (connectivity.p.s) was successful
+################################################################################
+#  STAGE 5 : Linking.
+#   /tmp/xmtcc.PTWkUd9SRr/xmtc.p /tmp/xmtcc.PTWkUd9SRr/connectivity.p.p -> connectivity.p.sim + connectivity.p.b
+################################################################################
+/opt/xmt/xmtcc/xmt-linker -xmt32 -fpga /opt/xmt/xmtcc/gcc-xmt32/xmt32-xmt32-elf/lib/xmtio.p /tmp/xmtcc.PTWkUd9SRr/xmtc.p /tmp/xmtcc.PTWkUd9SRr/connectivity.p.p /opt/xmt/class/xmtdata/connectivity/graph0/connectivity.xbo -o connectivity.p.sim
+Linking was successful
+End of Linking
